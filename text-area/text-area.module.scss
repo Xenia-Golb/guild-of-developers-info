@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use '@db/styles/abstracts' as *;
+
+.text-area-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.text-area {
+    width: 257px;
+    height: 77px;
+    padding: $text-area-padding;
+    resize: none;
+    border: $text-area-border-size solid $text-area-normal-border-color;
+    transition: border-color 0.3s;
+
+    &:focus {
+        border-color: $text-area-active-border;
+    }
+
+    &:hover {
+        border-color: $text-area-hover-border;
+    }
+
+    &:invalid {
+        border-color: $text-area-error-border;
+    }
+
+    // &:disabled {
+    //     background-color: $clr-neutral-100;
+    //     cursor: not-allowed;
+    // }
+
+    &::placeholder {
+        color: $text-area-color-placeholder;
+    }
+
+}
+
+.character-count {
+    font-size: $text-area-size-chars-count;
+    color: $text-area-color-chars-count;
+    text-align: right;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+}
+
+.helper-text {}
+
+.error-text {}

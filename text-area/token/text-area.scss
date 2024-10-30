@@ -1,0 +1,28 @@
+@use '../colors' as *;
+@use '../sizes' as *;
+@use '../typography' as *;
+
+$text-area-normal-border-color: $clr-neutral-200;
+$text-area-text-transform: none;
+$text-area-text-decoration: none;
+$text-area-border-size: 1px;
+$text-area-border-radius: $size-3;
+$text-area-padding: 0px 12px 0px 16px;
+
+
+$text-area-color-size: $size-3 ;
+$text-area-color-placeholder: $clr-neutral-600;
+
+$text-area-color-chars-count: $clr-neutral-600;
+$text-area-size-chars-count: $size-3;
+
+//Hover
+$text-area-hover-border: $text-area-border-size solid $clr-neutral-600 ;
+$text-area-hover-color: $clr-neutral-900;
+
+//Active
+$text-area-active-border: $text-area-border-size solid $clr-accent-400;
+$text-area-active-color: $clr-neutral-900;
+
+//Error 
+$text-area-error-border: $text-area-border-size solid $clr-danger-400;
