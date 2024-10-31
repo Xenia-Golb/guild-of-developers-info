@@ -8,34 +8,37 @@
 }
 
 .text-area {
-    width: 257px;
-    height: 77px;
-    padding: $text-area-padding;
+    --width: 257px;
+    --height: 77px;
+
+    box-sizing: border-box;
+    width: (var(--width));
+    height: (var(--height));
+    padding: 12px 0 12px 16px;
     resize: none;
+    border-radius: $text-area-border-radius;
     border: $text-area-border-size solid $text-area-normal-border-color;
     transition: border-color 0.3s;
-
-    &:focus {
-        border-color: $text-area-active-border;
-    }
+    font-family: $text-area-font-family;
 
     &:hover {
-        border-color: $text-area-hover-border;
+        border: $text-area-hover-border;
     }
-
-    &:invalid {
-        border-color: $text-area-error-border;
-    }
-
-    // &:disabled {
-    //     background-color: $clr-neutral-100;
-    //     cursor: not-allowed;
-    // }
 
     &::placeholder {
         color: $text-area-color-placeholder;
+        font-weight: $text-area-font-weight;
+        font-size: $text-area-size-placeholder;
     }
 
+    &__variant__error {
+        border: $text-area-error-border;
+        color: $text-area-error-color-font;
+    }
+
+    &__variant__active {
+        border: $text-area-active-border;
+    }
 }
 
 .character-count {
@@ -43,10 +46,17 @@
     color: $text-area-color-chars-count;
     text-align: right;
     position: absolute;
-    top: 70px;
-    right: 30px;
+    top: 50px;
+    right: 14px;
+    font-weight: $text-area-font-weight;
+    font-family: $text-area-font-family;
 }
 
-.helper-text {}
-
-.error-text {}
+.error-text {
+    font-family: $text-area-font-family;
+    color: $clr-danger-400;
+    margin-top: $size-3;
+    font-size: $text-area-color-size;
+    font-weight: $text-area-font-weight;
+    text-align: left;
+}
