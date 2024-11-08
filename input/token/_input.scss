@@ -1,0 +1,45 @@
+@use '../colors' as *;
+@use '../sizes' as *;
+@use '../typography' as *;
+
+//input
+$input-border-size: 0.063rem;
+$input-border-radius: $size-3;
+$input-font-family: $ff-system;
+
+//label
+$input-label-size: $fs-150;
+$input-label-weight: $fw-500;
+$input-label-color: #010e15;
+$input-label-color-disabled: $clr-neutral-600;
+$input-label-color-filled: $clr-neutral-600;
+
+//placeholder
+$input-placeholder-size: $fs-600;
+$input-placeholder-weight: $fw-400;
+$input-placeholder-paddings: $size-4 0 $size-3 $size-4;
+
+//normal
+$input-border-color-normal: $clr-neutral-200;
+$input-placeholder-color-normal: $clr-neutral-600;
+
+//hover
+$input-border-color-hover: $clr-neutral-600;
+$input-placeholder-color-hover: #707f8d;
+
+//active
+$input-border-color-active: $clr-accent-400;
+$input-placeholder-color-active: #010e15;
+
+//error
+$input-border-color-error: $clr-danger-400;
+$input-placeholder-color-error: #010e15;
+
+//filled
+$input-border-color-filled: $clr-neutral-200;
+$input-placeholder-color-filled: #010e15;
+
+//disabled
+$input-border-color-disabled: $clr-neutral-200;
+$input-bg-color-disabled: $clr-neutral-200;
+$input-placeholder-color-disabled: $clr-neutral-600;
