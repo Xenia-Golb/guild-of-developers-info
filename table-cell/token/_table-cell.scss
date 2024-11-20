@@ -1,0 +1,27 @@
+@use '../colors' as *;
+@use '../sizes' as *;
+@use '../typography' as *;
+
+
+//size
+$table-cell-border-bottom-size-big: 2px;
+$table-cell-border-bottom-size-small: 1px;
+
+//color
+$table-cell-border-bottom-color-big: #E5F3FB;
+$table-cell-border-bottom-color-small: #E9EFFB;
+
+//padding
+$table-cell-padding-headline: 28px 34px 28px 16px;
+$table-cell-padding-text: 25px 52px 26px 20px;
+$table-cell-padding-clip: 24px 17px 25px 17px;
+$table-cell-padding-status: 18px 16px 18px 16px;
+$table-cell-padding-button: 18px 16px 18px 16px;
+
+//font 
+$table-cell-font-color: #010E15;
+$table-cell-font-size: 16px;
+$table-cell-font-weight: 500;
+$table-cell-font-line-height: 19px;
+
+$table-cell-font-text-copy-color: #677582;

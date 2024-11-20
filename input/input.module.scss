@@ -2,82 +2,100 @@
 @use '@db/styles/abstracts' as *;
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .input {
-    --max-width: 257px;
-    --min-height: 50px;
+  --max-width: 257px;
+  --min-height: 50px;
 
-    min-height: var(--min-height);
-    max-width: var(--max-width);
+  min-height: var(--min-height);
+  max-width: var(--max-width);
 
-    padding: 15px 0px 13px 16px;
-    border: $input-border-size solid $input-border-color-normal;
-    border-radius: $input-border-radius;
+  padding: 15px 0px 13px 16px;
+  border: $input-border-size solid $input-border-color-normal;
+  border-radius: $input-border-radius;
 
-    font-size: $fs-150;
-    font-weight: $fw-400;
-    font-family: $input-font-family;
-    font-size: 18px;
-    transition: ease-out 200ms;
+  font-size: $fs-150;
+  font-weight: $fw-400;
+  font-family: $input-font-family;
+  font-size: 18px;
+  transition: ease-out 200ms;
 
-    &-label {
-        font-size: 13px;
-        font-weight: $input-label-weight;
-        color: $input-label-color;
+  &-label {
+    font-size: 13px;
+    font-weight: $input-label-weight;
+    color: $input-label-color;
 
-        &-disabled {
-            color: $input-label-color-disabled;
-        }
+    &-disabled {
+      color: $input-label-color-disabled;
     }
+  }
+
+  &::placeholder {
+    line-height: 21.6px;
+    color: $input-placeholder-color-normal;
+  }
+
+  &:hover {
+    border-color: $input-border-color-hover;
+    outline: none;
 
     &::placeholder {
-        line-height: 21.6px;
-        color: $input-placeholder-color-normal;
+      color: $input-placeholder-color-hover;
+      font-weight: 400;
     }
+  }
 
-    &:hover {
-        border-color: $input-border-color-hover;
-        outline: none;
+  &:is(:focus, :active) {
+    border-color: $input-border-color-active;
+    outline: none;
 
-        &::placeholder {
-            color: $input-placeholder-color-hover;
-            font-weight: 400;
-        }
+    &::placeholder {
+      color: $input-placeholder-color-active;
     }
+  }
 
-    &:is(:focus, :active) {
-        border-color: $input-border-color-active;
-        outline: none;
+  &:disabled {
+    border-color: $input-border-color-disabled;
+    background-color: $input-bg-color-disabled;
+    color: $input-placeholder-color-disabled;
+    cursor: not-allowed;
+  }
 
-        &::placeholder {
-            color: $input-placeholder-color-active;
-        }
+  &-error {
+    border-color: $input-border-color-error;
+    color: $input-placeholder-color-error;
+
+    &:is(:focus, :active, :hover) {
+      border-color: $input-border-color-error;
+      outline: none;
+
+      &::placeholder {
+        color: $input-placeholder-color-active;
+      }
     }
+  }
+}
 
-    &:disabled {
-        border-color: $input-border-color-disabled;
-        background-color: $input-bg-color-disabled;
-        color: $input-placeholder-color-disabled;
-        cursor: not-allowed;
-    }
+.icon-button {
+  background-color: transparent;
+  border: none;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 40px;
+  right: 40%;
 
-    &-error {
-        border-color: $input-border-color-error;
-        color: $input-placeholder-color-error;
-
-        &:is(:focus, :active, :hover) {
-            border-color: $input-border-color-error;
-            outline: none;
-
-            &::placeholder {
-                color: $input-placeholder-color-active;
-            }
-        }
-    }
+  .icon {
+    height: 18px;
+    width: 18px;
+    color: #677582;
+    fill: #677582;
+  }
 }

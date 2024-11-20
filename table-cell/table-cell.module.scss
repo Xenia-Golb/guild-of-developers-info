@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use '@db/styles/abstracts' as *;
+
+.table-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $table-cell-font-size;
+  font-weight: $table-cell-font-weight;
+  line-height: $table-cell-font-line-height;
+  color: $table-cell-font-color;
+  margin-bottom: 50px;
+
+  &.active {
+    background-color: #f1faff;
+  }
+
+  // Границы
+  &.border-bottom-big {
+    border-bottom: $table-cell-border-bottom-size-big solid $table-cell-border-bottom-color-big;
+    width: 118px;
+  }
+
+  &.border-bottom-small {
+    border-bottom: $table-cell-border-bottom-size-small solid $table-cell-border-bottom-color-small;
+    width: 102px;
+  }
+
+  // Типы ячеек
+  &.padding-headline {
+    padding: $table-cell-padding-headline;
+  }
+
+  &.padding-text {
+    padding: $table-cell-padding-text;
+  }
+
+  &.padding-clip {
+    padding: $table-cell-padding-clip;
+  }
+
+  &.padding-status {
+    padding: $table-cell-padding-status;
+  }
+
+  &.padding-button {
+    padding: $table-cell-padding-button;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 40px; // Ширина кнопки
+    height: 40px; // Высота кнопки
+    border: none;
+    background: pink;
+    cursor: pointer;
+
+    // Обработка иконок через @each
+    @each $name, $icon-map in $icons {
+        &_icon_#{$name}::before {
+          $icon-width: map.get($icon-map, 'width');
+          $icon-height: map.get($icon-map, 'height');
+          $icon-file-name: map.get($icon-map, 'file');
+    
+          content: '';
+          display: block;
+          mask: no-repeat center / contain url(../../../../icons/#{$icon-file-name}.svg);
+          width: $icon-width;
+          height: $icon-height;
+          background-color: blue;
+        }
+      }
+  }
+}

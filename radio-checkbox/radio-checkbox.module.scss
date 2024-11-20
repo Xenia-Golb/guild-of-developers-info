@@ -2,50 +2,64 @@
 @use '@db/styles/abstracts' as *;
 
 .radio-checkbox {
-    &__hidden {
-        display: none;
+  &__hidden {
+    display: none;
+  }
+
+  &__custom {
+    display: inline-block;
+    width: $radio-checkbox-size-max;
+    height: $radio-checkbox-size-max;
+    border-radius: $radio-checkbox-border-radius;
+    background-color: $radio-checkbox-unchecked-color;
+    position: relative;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      transform 0.3s;
+    border: $radio-checkbox-border-size solid $radio-checkbox-border-color;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(#{$radio-checkbox-size-max} / 2);
+      height: calc(#{$radio-checkbox-size-max} / 2);
+      border-radius: 50%;
+      background-color: $radio-checkbox-bg-color;
+      transition:
+        transform 0.3s,
+        background-color 0.3s;
     }
 
+    &__input:focus + &__custom {
+      box-shadow: 0 0 0 $radio-checkbox-border-size-focus $radio-checkbox-checked-color;
+    }
+  }
+
+  &__hidden:checked + &__custom {
+    background-color: $radio-checkbox-checked-color;
+    border: $radio-checkbox-border-size solid #079ee6;
+
+    &:before {
+      transform: translate(-50%, -50%) scale(1);
+      background-color: $radio-checkbox-unchecked-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .radio-checkbox {
     &__custom {
-        display: inline-block;
-        width: $radio-checkbox-size-max;
-        height: $radio-checkbox-size-max;
-        border-radius: $radio-checkbox-border-radius;
-        background-color: $radio-checkbox-unchecked-color;
-        position: relative;
-        cursor: pointer;
-        transition:
-            background-color 0.3s,
-            transform 0.3s;
-        border: 1px solid $radio-checkbox-border-color;
+      width: $radio-checkbox-size-min;
+      height: $radio-checkbox-size-min;
 
-        &:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: calc(#{$radio-checkbox-size-max} / 2);
-            height: calc(#{$radio-checkbox-size-max} / 2);
-            border-radius: 50%;
-            background-color: white;
-            transition:
-                transform 0.3s,
-                background-color 0.3s;
-        }
-
-        &__input:focus+&__custom {
-            box-shadow: 0 0 0 2px $radio-checkbox-checked-color;
-        }
+      &:before {
+        width: calc(#{$radio-checkbox-size-min} / 2);
+        height: calc(#{$radio-checkbox-size-min} / 2);
+      }
     }
-
-    &__hidden:checked+&__custom_checked {
-        background-color: $radio-checkbox-checked-color;
-        border: 1px solid #079ee6;
-
-        &:before {
-            transform: translate(-50%, -50%) scale(1);
-            background-color: $radio-checkbox-unchecked-color;
-        }
-    }
+  }
 }

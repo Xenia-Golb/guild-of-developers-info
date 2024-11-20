@@ -5,6 +5,8 @@
 //size
 $radio-checkbox-size-min: $size-4;
 $radio-checkbox-size-max: $size-6;
+$radio-checkbox-border-size: 1px;
+$radio-checkbox-border-size-focus: 2px;
 $radio-checkbox-border-radius: $size-3;
 
 //padding
@@ -14,3 +16,4 @@ $radio-checkbox-paddings-max: 6px;
 $radio-checkbox-checked-color: $clr-accent-400;
 $radio-checkbox-unchecked-color: $clr-neutral-100;
 $radio-checkbox-border-color: $clr-neutral-200;
+$radio-checkbox-bg-color: $clr-neutral-100;
