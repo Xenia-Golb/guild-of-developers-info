@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import s from './radio-checkbox.module.scss';
+import { useState } from "react";
+import s from "./radio-checkbox.module.scss";
 
 type RadioCheckBoxProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,16 +16,19 @@ export const RadioCheckBox = ({ onChange, ...props }: RadioCheckBoxProps) => {
   };
 
   return (
-    <div className={s['radio-checkbox']}>
+    <div className={s["radio-checkbox"]}>
       <input
-        type='radio'
-        className={s['radio-checkbox__hidden']}
+        type="radio"
+        className={s["radio-checkbox__hidden"]}
         checked={isChecked}
         onChange={handleChange}
         {...props}
       />
       <span
-        className={`${s['radio-checkbox__custom']} ${isChecked ? s['radio-checkbox__custom_checked'] : ''}`}></span>
+        className={`${s["radio-checkbox__custom"]} ${
+          isChecked ? s["radio-checkbox__custom_checked"] : ""
+        }`}
+      ></span>
     </div>
   );
 };

@@ -1,0 +1,662 @@
+// Global color tokens
+
+$_clr-black-900: #010e15;
+$_clr-black-800: #2f2f2f;
+$_clr-black-700: #384045;
+$_clr-black-600: #677582;
+$_clr-black-500: #7c8b8f;
+$_clr-black-200: #d7dde8;
+$_clr-black-100: #a6b0b7;
+$_clr-white: #fff;
+
+$_clr-blue-900: #152127;
+$_clr-blue-700: #1f4674;
+$_clr-blue-550: #2476e1;
+$_clr-blue-530: #0782e6;
+$_clr-blue-500: #018acc;
+$_clr-blue-300: #0782e6;
+$_clr-blue-400: #079ee6;
+$_clr-blue-200: #e5f5fc;
+$_clr-blue-100: #f0faff;
+
+$_clr-red-600: #763736;
+$_clr-red-500: #c14043;
+$_clr-red-400: #ff5a5d;
+$_clr-red-300: #c14746;
+$_clr-red-100: #fff0f0;
+
+$_clr-green-700: #12593e;
+$_clr-green-600: #22ab77;
+$_clr-green-500: #2dae80;
+$_clr-green-400: #3acd98;
+$_clr-green-200: #f0fff0;
+$_clr-green-100: #e9f9f3;
+
+$_clr-yellow-600: #765622;
+$_clr-yellow-500: #c1b346;
+$_clr-yellow-400: #ffb800;
+$_clr-yellow-200: #fff9f0;
+$_clr-yellow-100: #fffbee;
+
+$_clr-purple-400: #8657e8;
+$_clr-purple-100: #f1eefc;
+
+$light: (
+  'neutral': (
+    900: $_clr-black-900,
+    800: $_clr-black-800,
+    600: $_clr-black-600,
+    500: $_clr-black-500,
+    200: $_clr-black-200,
+    100: $_clr-white,
+  ),
+  'accent': (
+    900: $_clr-blue-900,
+    700: $_clr-blue-700,
+    500: $_clr-blue-500,
+    400: $_clr-blue-400,
+    200: $_clr-blue-200,
+    100: $_clr-white,
+  ),
+  'danger': (
+    500: $_clr-red-500,
+    400: $_clr-red-400,
+    100: $_clr-red-100,
+  ),
+  'success': (
+    500: $_clr-green-500,
+    400: $_clr-green-400,
+    100: $_clr-green-100,
+  ),
+  'warning': (
+    400: $_clr-yellow-400,
+    100: $_clr-yellow-100,
+  ),
+  'decor': (
+    400: $_clr-purple-400,
+    100: $_clr-purple-100,
+  ),
+  'choice': (
+    color: $_clr-black-900,
+    error: $_clr-red-400,
+    border: $_clr-black-200,
+    border-hover: $_clr-black-600,
+    bg: $_clr-white,
+    bg-choice: $_clr-blue-200,
+    bg-tag: $_clr-white,
+    text-tag: $_clr-black-900,
+    border-tag: $_clr-black-200,
+    create: $_clr-black-600,
+    create-color: $_clr-black-900,
+  ),
+  'drag': (
+    text: $_clr-black-600,
+    text-drag: $_clr-blue-400,
+    link: $_clr-blue-400,
+    error: $_clr-red-400,
+    border: $_clr-black-200,
+    border-drag: $_clr-blue-400,
+    bg: $_clr-white,
+    bg-drag: $_clr-blue-200,
+    bg-error: $_clr-white,
+  ),
+  'tooltip': (
+    text: $_clr-black-900,
+    border-normal: $_clr-white,
+    border-error: $_clr-red-400,
+    bgr-normal: $_clr-white,
+    bgr-light: $_clr-white,
+    text-light: $_clr-black-900,
+    border-light: $_clr-white,
+    bgr-email: $_clr-blue-200,
+    bgr-error: $_clr-white,
+    error-text: $_clr-red-400,
+    shadow: $_clr-black-600,
+    shadow-email: #7a99aa5e,
+    shadow-error: $_clr-red-400,
+    error-arrow: $_clr-white,
+    icon-alert: $_clr-red-400,
+    icon-dot: $_clr-black-900,
+    icon-tick: $_clr-green-400,
+  ),
+  'filter': (
+    border: $_clr-black-200,
+    border-bg: $_clr-white,
+    border-bg-disable: $_clr-black-200,
+    text: $_clr-black-600,
+    text-label: $_clr-black-900,
+    text-button: $_clr-white,
+    text-disable: $_clr-black-600,
+    data-badge-border: $_clr-blue-400,
+    data-badge-border-before: $_clr-black-600,
+    data-badge-border-color: $_clr-white,
+  ),
+  'input': (
+    color: $_clr-black-600,
+    border-normal: $_clr-black-200,
+    border-hover: $_clr-black-600,
+    border-active: $_clr-blue-400,
+    border-error: $_clr-red-400,
+    border-error-active: $_clr-red-400,
+    bg: $_clr-white,
+    bg-disabled: $_clr-black-200,
+    label: $_clr-black-900,
+    placeholder: $_clr-black-600,
+    placeholder-hover: $_clr-black-900,
+    placeholder-active: $_clr-black-900,
+    placeholder-disabled: $_clr-black-600,
+    icon-color: $_clr-black-600,
+  ),
+  'textArea': (
+    color: $_clr-black-600,
+    bg: $_clr-white,
+    border-color-normal: $_clr-black-200,
+    border-hover: $_clr-black-600,
+    border-active: $_clr-blue-400,
+    border-error: $_clr-red-400,
+    placeholder-normal: #828282,
+    placeholder-hover: $_clr-black-600,
+    placeholder-active: $_clr-black-900,
+    chars-count-color: $_clr-black-600,
+    color-error: $_clr-red-400,
+  ),
+  'radio': (
+    unchecked: $_clr-white,
+    bg: $_clr-white,
+  ),
+  'candidate-flow': (
+    date-text-nested: $_clr-black-600,
+    text-nested: $_clr-black-900,
+    date-text: $_clr-black-600,
+    text: $_clr-black-900,
+    bgr: $_clr-white,
+    border: $_clr-black-200,
+    time-line: $_clr-black-200,
+    marker: $_clr-blue-400,
+    marker-standalone: $_clr-blue-400,
+  ),
+  'table-cell': (
+    bg-color: $_clr-white,
+    bg-color-hover: $_clr-blue-200,
+    bg-color-state-new: $_clr-green-100,
+    border-bottom-color-headline: #dbe5fa,
+    border-bottom-color-default: #e9effb,
+    font-color-dark: $_clr-black-900,
+    font-color-light: $_clr-black-600,
+    icon-copy-color: $_clr-blue-400,
+    icon-moreVert: $_clr-black-600,
+    icon-attach: $_clr-blue-400,
+    icon-trash: $_clr-red-400,
+  ),
+  'toggle': (
+    border: $_clr-black-600,
+    border-hover: $_clr-blue-200,
+    border-checked: $_clr-blue-400,
+    border-checked-hover: $_clr-blue-400,
+    bg-color: $_clr-white,
+    bg-color-hover: $_clr-blue-200,
+    bg-color-disable: $_clr-black-200,
+    bg-color-checked: $_clr-blue-400,
+    bg-color-checked-hover: $_clr-blue-300,
+    color-hover: $_clr-blue-400,
+    color-disable: $_clr-black-600,
+    color-checked: $_clr-white,
+    color-label: $_clr-black-900,
+  ),
+  'status': (
+    bg: $_clr-white,
+    color: $_clr-black-900,
+    circle-blue: $_clr-blue-400,
+    circle-yellow: $_clr-yellow-400,
+    circle-green: $_clr-green-400,
+    circle-red: $_clr-red-400,
+    hover-blue: $_clr-blue-100,
+    hover-yellow: $_clr-yellow-200,
+    hover-green: $_clr-green-200,
+    hover-red: $_clr-red-100,
+    color-blue: $_clr-blue-400,
+    color-yellow: $_clr-yellow-400,
+    color-green: $_clr-green-400,
+    color-red: $_clr-red-400,
+    border-blue: $_clr-blue-400,
+    border-yellow: $_clr-yellow-400,
+    border-green: $_clr-green-400,
+    border-red: $_clr-red-400,
+  ),
+  'dropdown': (
+    bg-item: $_clr-white,
+    bg-item-hover: $_clr-blue-200,
+    bg-menu: $_clr-white,
+    item-badge-color: $_clr-black-200,
+    item-badge-background-color: $_clr-black-900,
+  ),
+  'header-button': (
+    color: $_clr-black-900,
+    color-hover: $_clr-blue-400,
+    color-active: $_clr-blue-400,
+    color-disable: $_clr-black-600,
+    bg-color-active: $_clr-blue-200,
+    bg-color-disable: $_clr-black-200,
+  ),
+  'menu-tab': (
+    color: $_clr-black-900,
+    border-hover: $_clr-blue-530,
+    border-selected: $_clr-blue-400,
+  ),
+  'menu-settings': (
+    color-icon: $_clr-blue-400,
+    color-normal: $_clr-black-900,
+    color-active: $_clr-black-900,
+    bg-active: $_clr-blue-200,
+  ),
+  'toggle-button': (
+    bg-active: $_clr-blue-200,
+    border-bottom-color: $_clr-black-600,
+    font-color-normal: $_clr-black-600,
+    font-color-active: $_clr-black-900,
+  ),
+);
+
+$dark: (
+  'neutral': (
+    900: $_clr-white,
+    800: $_clr-black-200,
+    600: $_clr-black-500,
+    500: $_clr-black-600,
+    200: $_clr-black-800,
+    100: $_clr-black-900,
+  ),
+  'accent': (
+    900: $_clr-white,
+    700: $_clr-blue-200,
+    500: $_clr-blue-400,
+    400: $_clr-blue-500,
+    200: $_clr-blue-700,
+    100: $_clr-blue-900,
+  ),
+  'danger': (
+    500: $_clr-red-100,
+    400: $_clr-red-400,
+    100: $_clr-red-500,
+  ),
+  'success': (
+    500: $_clr-green-100,
+    400: $_clr-green-400,
+    100: $_clr-green-500,
+  ),
+  'warning': (
+    400: $_clr-yellow-100,
+    100: $_clr-yellow-400,
+  ),
+  'decor': (
+    400: $_clr-purple-100,
+    100: $_clr-purple-400,
+  ),
+  'drag': (
+    text: $_clr-black-200,
+    text-drag: $_clr-white,
+    link: $_clr-blue-400,
+    error: $_clr-red-400,
+    border: $_clr-black-200,
+    border-drag: $_clr-blue-400,
+    bg: $_clr-blue-900,
+    bg-drag: $_clr-blue-700,
+    bg-error: $_clr-black-900,
+  ),
+  'choice': (
+    color: $_clr-black-900,
+    error: $_clr-red-300,
+    border: $_clr-black-100,
+    border-hover: $_clr-blue-400,
+    bg: $_clr-blue-900,
+    bg-choice: $_clr-black-100,
+    bg-tag: $_clr-black-200,
+    text-tag: $_clr-black-900,
+    border-tag: $_clr-white,
+    create: $_clr-black-200,
+    create-color: $_clr-white,
+  ),
+  'tooltip': (
+    text: $_clr-white,
+    border-normal: $_clr-black-200,
+    border-error: $_clr-red-500,
+    bgr-normal: $_clr-blue-900,
+    bgr-light: $_clr-white,
+    text-light: $_clr-black-900,
+    border-light: $_clr-white,
+    bgr-email: $_clr-black-700,
+    bgr-error: $_clr-red-500,
+    error-text: $_clr-white,
+    shadow: transparent,
+    shadow-email: transparent,
+    shadow-error: transparent,
+    error-arrow: $_clr-red-500,
+    icon-alert: $_clr-red-300,
+    icon-dot: $_clr-white,
+    icon-tick: $_clr-green-600,
+  ),
+  'filter': (
+    border: $_clr-black-700,
+    border-bg: $_clr-blue-900,
+    border-bg-disable: $_clr-black-700,
+    text: $_clr-black-200,
+    text-label: $_clr-black-200,
+    text-button: $_clr-white,
+    text-disable: $_clr-black-100,
+    data-badge-border: $_clr-blue-400,
+    data-badge-border-before: $_clr-black-600,
+    data-badge-border-color: $_clr-white,
+  ),
+  'input': (
+    color: $_clr-black-200,
+    border-normal: $_clr-black-100,
+    border-hover: #0782e6,
+    border-active: $_clr-blue-400,
+    border-error: $_clr-red-400,
+    border-error-active: $_clr-red-300,
+    bg: $_clr-blue-900,
+    bg-disabled: #384045,
+    label: $_clr-black-200,
+    placeholder: $_clr-black-200,
+    placeholder-hover: $_clr-black-200,
+    placeholder-active: $_clr-black-200,
+    placeholder-disabled: $_clr-black-100,
+    icon-color: $_clr-black-200,
+  ),
+  'textArea': (
+    color: $_clr-black-200,
+    bg: $_clr-blue-900,
+    border-color-normal: $_clr-black-100,
+    border-hover: #0782e6,
+    border-active: $_clr-blue-400,
+    border-error: $_clr-red-300,
+    placeholder-normal: $_clr-black-200,
+    placeholder-hover: $_clr-black-200,
+    placeholder-active: $_clr-white,
+    chars-count-color: $_clr-black-200,
+    color-error: $_clr-red-300,
+  ),
+  'radio': (
+    unchecked: $_clr-blue-900,
+    bg: $_clr-blue-900,
+  ),
+  'candidate-flow': (
+    date-text-nested: $_clr-black-600,
+    text-nested: $_clr-black-200,
+    date-text: $_clr-black-200,
+    text: $_clr-white,
+    bgr: $_clr-blue-900,
+    border: $_clr-black-700,
+    time-line: $_clr-black-200,
+    marker: $_clr-blue-550,
+    marker-standalone: $_clr-blue-400,
+  ),
+  'table-cell': (
+    bg-color: $_clr-blue-900,
+    bg-color-hover: $_clr-black-700,
+    bg-color-state-new: $_clr-blue-700,
+    border-bottom-color-headline: $_clr-blue-900,
+    border-bottom-color-default: $_clr-blue-900,
+    font-color-dark: $_clr-black-200,
+    font-color-light: $_clr-black-200,
+    icon-copy-color: $_clr-blue-400,
+    icon-moreVert: $_clr-black-200,
+    icon-attach: $_clr-blue-400,
+  ),
+  'toggle': (
+    border: $_clr-black-100,
+    border-hover: $_clr-black-200,
+    border-checked: $_clr-blue-400,
+    border-checked-hover: $_clr-blue-300,
+    bg-color: $_clr-blue-900,
+    bg-color-hover: $_clr-blue-900,
+    bg-color-checked: $_clr-blue-700,
+    bg-color-checked-hover: $_clr-blue-700,
+    color-hover: $_clr-black-200,
+    bg-color-disable: $_clr-black-700,
+    color-disable: $_clr-black-100,
+    color-checked: $_clr-white,
+    color-label: $_clr-black-200,
+  ),
+  'status': (
+    bg: $_clr-blue-900,
+    color: $_clr-black-200,
+    circle-blue: $_clr-blue-400,
+    circle-yellow: $_clr-yellow-500,
+    circle-green: $_clr-green-600,
+    circle-red: $_clr-red-300,
+    hover-blue: $_clr-blue-700,
+    hover-yellow: $_clr-yellow-600,
+    hover-green: $_clr-green-700,
+    hover-red: $_clr-red-600,
+    color-blue: $_clr-white,
+    color-yellow: $_clr-white,
+    color-green: $_clr-white,
+    color-red: $_clr-white,
+    border-blue: $_clr-blue-700,
+    border-yellow: $_clr-yellow-600,
+    border-green: $_clr-green-700,
+    border-red: $_clr-red-600,
+  ),
+  'dropdown': (
+    bg-item: $_clr-blue-900,
+    bg-item-hover: $_clr-black-700,
+    bg-menu: $_clr-blue-900,
+    item-badge-color: $_clr-black-200,
+  ),
+  'header-button': (
+    color: $_clr-black-200,
+    color-hover: $_clr-blue-400,
+    color-active: $_clr-white,
+    color-disable: $_clr-black-100,
+    bg-color-active: $_clr-blue-700,
+    bg-color-disable: $_clr-black-700,
+  ),
+  'menu-tab': (
+    color: $_clr-white,
+    border-hover: $_clr-blue-530,
+    border-selected: $_clr-blue-400,
+  ),
+  'menu-settings': (
+    color-icon: $_clr-blue-400,
+    color-normal: $_clr-black-200,
+    color-active: $_clr-white,
+    bg-active: $_clr-black-700,
+  ),
+  'toggle-button': (
+    bg-active: $_clr-blue-900,
+    border-bottom-color: $_clr-black-200,
+    font-color-normal: $_clr-black-200,
+    font-color-active: $_clr-white,
+  ),
+);
+
+// Context color tokens
+
+$clr-neutral-900: var(--clr-neutral-900);
+$clr-neutral-800: var(--clr-neutral-800);
+$clr-neutral-600: var(--clr-neutral-600);
+$clr-neutral-500: var(--clr-neutral-500);
+$clr-neutral-200: var(--clr-neutral-200);
+$clr-neutral-100: var(--clr-neutral-100);
+
+$clr-accent-500: var(--clr-accent-500);
+$clr-accent-400: var(--clr-accent-400);
+$clr-accent-200: var(--clr-accent-200);
+$clr-accent-100: var(--clr-accent-100);
+
+$clr-danger-500: var(--clr-danger-500);
+$clr-danger-400: var(--clr-danger-400);
+$clr-danger-100: var(--clr-danger-100);
+
+$clr-success-500: var(--clr-success-500);
+$clr-success-400: var(--clr-success-400);
+$clr-success-100: var(--clr-success-100);
+
+$clr-warning-400: var(--clr-warning-400);
+$clr-warning-400: var(--clr-warning-400);
+$clr-warning-100: var(--clr-warning-100);
+
+$clr-decor-100: var(--clr-decor-100);
+$clr-decor-100: var(--clr-decor-100);
+
+$clr-choice-color: var(--clr-choice-color);
+$clr-choice-error: var(--clr-choice-error);
+$clr-choice-border: var(--clr-choice-border);
+$clr-choice-border-hover: var(--clr-choice-border-hover);
+$clr-choice-bg: var(--clr-choice-bg);
+$clr-choice-bg-choice: var(--clr-choice-bg-choice);
+$clr-choice-bg-tag: var(--clr-choice-bg-tag);
+$clr-choice-text-tag: var(--clr-choice-text-tag);
+$clr-choice-border-tag: var(--clr-choice-border-tag);
+$clr-choice-create: var(--clr-choice-create);
+$clr-choice-create-color: var(--clr-choice-create-color);
+
+$clr-drag-text: var(--clr-drag-text);
+$clr-drag-text-drag: var(--clr-drag-text-drag);
+$clr-drag-link: var(--clr-drag-link);
+$clr-drag-error: var(--clr-drag-error);
+$clr-drag-border: var(--clr-drag-border);
+$clr-drag-border-drag: var(--clr-drag-border-drag);
+$clr-drag-bg: var(--clr-drag-bg);
+$clr-drag-bg-drag: var(--clr-drag-bg-drag);
+$clr-drag-bg-error: var(--clr-drag-bg-error);
+
+$clr-tooltip-text: var(--clr-tooltip-text);
+$clr-tooltip-border-normal: var(--clr-tooltip-border-normal);
+$clr-tooltip-border-error: var(--clr-tooltip-border-error);
+$clr-tooltip-bgr-normal: var(--clr-tooltip-bgr-normal);
+$clr-tooltip-bgr-light: var(--clr-tooltip-bgr-light);
+$clr-tooltip-text-light: var(--clr-tooltip-text-light);
+$clr-tooltip-border-light: var(--clr-tooltip-border-light);
+$clr-tooltip-bgr-email: var(--clr-tooltip-bgr-email);
+$clr-tooltip-error-text: var(--clr-tooltip-error-text);
+$clr-tooltip-shadow: var(--clr-tooltip-shadow);
+$clr-tooltip-shadow-email: var(--clr-tooltip-shadow-email);
+$clr-tooltip-shadow-error: var(--clr-tooltip-shadow-error);
+$clr-tooltip-error-arrow: var(--clr-tooltip-error-arrow);
+$clr-tooltip-icon-alert: var(--clr-tooltip-icon-alert);
+$clr-tooltip-icon-dot: var(--clr-tooltip-icon-dot);
+$clr-tooltip-icon-tick: var(--clr-tooltip-icon-tick);
+
+$clr-filter-border: var(--clr-filter-border);
+$clr-filter-border-bg: var(--clr-filter-border-bg);
+$clr-filter-border-bg-disable: var(--clr-filter-border-bg-disable);
+$clr-filter-text: var(--clr-filter-text);
+$clr-filter-text-label: var(--clr-filter-text-label);
+$clr-filter-text-buttont: var(--clr-filter-text-button);
+$clr-filter-text-disable: var(--clr-filter-text-disable);
+$clr-filter-data-badge-border: var(--clr-filter-data-badge-border);
+$clr-filter-data-badge-border-before: var(--clr-filter-data-badge-border-before);
+$clr-filter-data-badge-color: var(--clr-filter-data-badge-color);
+
+$clr-input-color: var(--clr-input-color);
+$clr-input-border-normal: var(--clr-input-border-normal);
+$clr-input-border-hover: var(--clr-input-border-hover);
+$clr-input-border-active: var(--clr-input-border-active);
+$clr-input-border-error: var(--clr-input-border-error);
+$clr-input-border-error-active: var(--clr-input-border-error-active);
+$clr-input-bg: var(--clr-input-bg);
+$clr-input-bg-disabled: var(--clr-input-bg-disabled);
+$clr-input-label: var(--clr-input-label);
+$clr-input-placeholder: var(--clr-input-placeholder);
+$clr-input-placeholder-hover: var(--clr-input-placeholder-hover);
+$clr-input-placeholder-active: var(--clr-input-placeholder-active);
+$clr-input-placeholder-disabled: var(--clr-input-placeholder-disabled);
+$clr-input-icon-color: var(--clr-input-icon-color);
+
+$clr-textArea-color: var(--clr-textArea-color);
+$clr-textArea-bg: var(--clr-textArea-bg);
+$clr-textArea-border-color-normal: var(--clr-textArea-border-color-normal);
+$clr-textArea-border-hover: var(--clr-textArea-border-hover);
+$clr-textArea-border-active: var(--clr-textArea-border-active);
+$clr-textArea-border-error: var(--clr-textArea-border-error);
+$clr-textArea-placeholder-normal: var(--clr-textArea-placeholder-normal);
+$clr-textArea-placeholder-active: var(--clr-textArea-placeholder-active);
+$clr-textArea-placeholder-hover: var(--clr-textArea-placeholder-hover);
+$clr-textArea-chars-count-color: var(--clr-textArea-chars-count-color);
+$clr-textArea-error-color: var(--clr-textArea-error-color);
+
+$clr-radio-unchecked-color: var(--clr-radio-unchecked);
+$clr-radio-bg: var(--clr-radio-bg);
+
+$clr-candidate-flow-text: var(--clr-candidate-flow-text);
+$clr-candidate-flow-date-text: var(--clr-candidate-flow-date-text);
+$clr-candidate-flow-text-nested: var(--clr-candidate-flow-text-nested);
+$clr-candidate-flow-date-text-nested: var(--clr-candidate-flow-date-text-nested);
+$clr-candidate-flow-bgr: var(--clr-candidate-flow-bgr);
+$clr-candidate-flow-border: var(--clr-candidate-flow-border);
+$clr-candidate-flow-time-line: var(--clr-candidate-flow-time-line);
+$clr-candidate-flow-marker: var(--clr-candidate-flow-marker);
+$clr-candidate-flow-marker-standalone: var(--clr-candidate-flow-marker-standalone);
+
+$clr-table-cell-bg-color: var(--clr-table-cell-bg-color);
+$clr-table-cell-bg-color-hover: var(--clr-table-cell-bg-color-hover);
+$clr-table-cell-bg-color-state-new: var(--clr-table-cell-bg-color-state-new);
+$clr-table-cell-border-bottom-headline: var(--clr-table-cell-border-bottom-color-headline);
+$clr-table-cell-border-bottom-default: var(--clr-table-cell-border-bottom-color-default);
+$clr-table-cell-font-color-dark: var(--clr-table-cell-font-color-dark);
+$clr-table-cell-font-color-light: var(--clr-table-cell-font-color-light);
+$clr-table-cell-icon-copy-color: var(--clr-table-cell-icon-copy-color);
+$clr-table-cell-icon-moreVert: var(--clr-table-cell-icon-moreVert);
+$clr-table-cell-icon-attach: var(--clr-table-cell-icon-attach);
+$clr-table-cell-icon-trash: var(--clr-table-cell-icon-trash);
+$clr-toggle-border: var(--clr-toggle-border);
+$clr-toggle-border-hover: var(--clr-toggle-border-hover);
+$clr-toggle-border-checked: var(--clr-toggle-border-checked);
+$clr-toggle-border-checked-hover: var(--clr-toggle-border-checked-hover);
+$clr-toggle-bg-color: var(--clr-toggle-bg-color);
+$clr-toggle-bg-color-hover: var(--clr-toggle-bg-color-hover);
+$clr-toggle-bg-color-disable: var(--clr-toggle-bg-color-disable);
+$clr-toggle-bg-color-checked: var(--clr-toggle-bg-color-checked);
+$clr-toggle-bg-color-checked-hover: var(--clr-toggle-bg-color-checked-hover);
+$clr-toggle-color-hover: var(--clr-toggle-color-hover);
+$clr-toggle-color-disable: var(--clr-toggle-color-disable);
+$clr-toggle-color-checked: var(--clr-toggle-color-checked);
+$clr-toggle-color-label: var(--clr-toggle-color-label);
+
+$clr-status-bg: var(--clr-status-bg);
+$clr-status-color: var(--clr-status-color);
+$clr-status-circle-blue: var(--clr-status-circle-blue);
+$clr-status-circle-yellow: var(--clr-status-circle-yellow);
+$clr-status-circle-green: var(--clr-status-circle-green);
+$clr-status-circle-red: var(--clr-status-circle-red);
+$clr-status-hover-blue: var(--clr-status-hover-blue);
+$clr-status-hover-yellow: var(--clr-status-hover-yellow);
+$clr-status-hover-green: var(--clr-status-hover-green);
+$clr-status-hover-red: var(--clr-status-hover-red);
+$clr-status-color-blue: var(--clr-status-color-blue);
+$clr-status-color-yellow: var(--clr-status-color-yellow);
+$clr-status-color-green: var(--clr-status-color-green);
+$clr-status-color-red: var(--clr-status-color-red);
+$clr-status-border-blue: var(--clr-status-border-blue);
+$clr-status-border-yellow: var(--clr-status-border-yellow);
+$clr-status-border-green: var(--clr-status-border-green);
+$clr-status-border-red: var(--clr-status-border-red);
+
+$clr-dropdown-bg-item: var(--clr-dropdown-bg-item);
+$clr-dropdown-bg-item-hover: var(--clr-dropdown-bg-item-hover);
+$clr-dropdown-bg-menu: var(--clr-dropdown-bg-menu);
+$clr-dropdown-item-badge-color: var(--clr-dropdown-item-badge-color);
+$clr-dropdown-item-badge-background-color: var(--clr-dropdown-item-badge-background-color);
+
+$clr-header-button-color: var(--clr-header-button-color);
+$clr-header-button-color-hover: var(--clr-header-button-color-hover);
+$clr-header-button-color-active: var(--clr-header-button-color-active);
+$clr-header-button-color-disable: var(--clr-header-button-color-disable);
+$clr-header-button-bg-color-active: var(--clr-header-button-bg-color-active);
+$clr-header-button-bg-color-disable: var(--clr-header-button-bg-color-disable);
+
+$clr-menu-tab-color: var(--clr-menu-tab-color);
+$clr-menu-tab-border-hover: var(--clr-menu-tab-border-hover);
+$clr-menu-tab-border-selected: var(--clr-menu-tab-border-selected);
+
+$clr-menu-settings-color-normal: var(--clr-menu-settings-color-normal);
+$clr-menu-settings-color-active: var(--clr-menu-menu-settings-color-active);
+$clr-menu-settings-bg-active: var(--clr-menu-settings-bg-active);
+$clr-menu-settings-color-icon: var(--clr-menu-settings-color-icon);
+
+$clr-toggle-button-bg-active: var(--clr-toggle-button-bg-active);
+$clr-toggle-button-border-bottom-color: var(--clr-toggle-button-border-bottom-color);
+$clr-toggle-button-font-color-normal: var(--clr-toggle-button-font-color-normal);
+$clr-toggle-button-font-color-active: var(--clr-toggle-button-font-color-active);

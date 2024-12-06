@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use '@db/styles/abstracts' as *;
+
+.table-cell-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  .table-cell-dropdown {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+    background: #fff;
+    color: #010e15;
+  }
+
+  .dropdown-item {
+    width: 256px;
+    padding-bottom: 4px;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+
+    &:hover {
+      background: #e5f5fc;
+    }
+
+    &.dropdown-item-selected {
+      background: #e5f5fc;
+    }
+  }
+}

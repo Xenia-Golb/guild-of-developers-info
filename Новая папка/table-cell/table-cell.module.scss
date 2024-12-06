@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use '@db/styles/abstracts' as *;
+
+.table-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: $table-cell-font-weight;
+  line-height: $table-cell-font-line-height;
+  color: $table-cell-font-color;
+  margin-bottom: 50px;
+  padding: 10px; // Добавлен общий паддинг, если не задано иначе
+
+  &:hover {
+    background-color: #e5f5fc;
+  }
+
+  &.padding-headline {
+    padding: 15px 20px; // Пример паддингов для заголовка
+    border-bottom: $table-cell-border-bottom-size-headline solid
+      $table-cell-border-bottom-color-headline;
+  }
+  &.padding-text {
+    padding: 12px 20px; // Пример паддингов для текста
+    border-bottom: $table-cell-border-bottom-size-default solid
+      $table-cell-border-bottom-color-default;
+  }
+  &.padding-status {
+    padding: 10px 20px; // Пример паддингов для статуса
+    border-bottom: $table-cell-border-bottom-size-default solid
+      $table-cell-border-bottom-color-default;
+  }
+  &.padding-button {
+    padding: 10px 20px; // Пример паддингов для кнопки
+    border-bottom: $table-cell-border-bottom-size-default solid
+      $table-cell-border-bottom-color-default;
+  }
+}

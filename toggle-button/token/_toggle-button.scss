@@ -1,0 +1,21 @@
+@use '../colors' as *;
+@use '../sizes' as *;
+@use '../typography' as *;
+
+//bg
+$toggle-button-bg: transparent;
+$toggle-button-bg-active: $clr-toggle-button-bg-active;
+//size
+$toggle-button-width: 36px;
+$toggle-button-height: 36px;
+//border
+$toggle-button-border-bottom-color: $clr-toggle-button-border-bottom-color;
+$toggle-button-border-radius: 12px;
+//font
+$toggle-button-font-family: $ff-system;
+$toggle-button-font-size: $fs-300;
+$toggle-button-font-weight: $fw-400;
+$toggle-button-font-weight-bold: $fw-800;
+
+$toggle-button-font-color-normal: $clr-toggle-button-font-color-normal;
+$toggle-button-font-color-active: $clr-toggle-button-font-color-active;

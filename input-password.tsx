@@ -1,6 +1,7 @@
 import { forwardRef, useState } from 'react';
 import { Input } from './input';
 import { InputProps } from './input';
+import s from './input.module.scss';
 
 export const PasswordInput = forwardRef<
   HTMLInputElement,
@@ -8,18 +9,20 @@ export const PasswordInput = forwardRef<
 >(({ ...rest }, forwardRef) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  function toggleShowPassword() {
-    setIsPasswordVisible(!isPasswordVisible);
-  }
+  const toggleShowPassword = () => {
+    setIsPasswordVisible((prev) => !prev);
+  };
 
   return (
-    <Input
-      {...rest}
-      type={isPasswordVisible ? 'text' : 'password'}
-      icon={isPasswordVisible ? 'hide' : 'show'}
-      onIconClick={toggleShowPassword}
-      ref={forwardRef}
-    />
+    <div className={s['input-container']}>
+      <Input
+        {...rest}
+        ref={forwardRef}
+        type={isPasswordVisible ? 'text' : 'password'}
+        onIconClick={toggleShowPassword}
+        icon={isPasswordVisible ? 'state-On' : 'state-Off'}
+      />
+    </div>
   );
 });
 

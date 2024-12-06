@@ -6,6 +6,8 @@
 $input-border-size: 0.063rem;
 $input-border-radius: $size-3;
 $input-font-family: $ff-system;
+$input-bg-color-light: $clr-neutral-100;
+$input-bg-color-dark: #152127;
 
 //label
 $input-label-size: $fs-150;
@@ -43,3 +45,34 @@ $input-placeholder-color-filled: #010e15;
 $input-border-color-disabled: $clr-neutral-200;
 $input-bg-color-disabled: $clr-neutral-200;
 $input-placeholder-color-disabled: $clr-neutral-600;
+
+//icons
+$input-icon-size: 1.125rem;
+$input-icon-color-light: $clr-neutral-600;
+$input-icon-color-dark: $clr-neutral-200;
+
+//dark theme
+
+//label
+$input-label-color-dark: $clr-neutral-200;
+
+//placeholder
+$input-placeholder-dark-color-default: $clr-neutral-200;
+$input-placeholder-dark-color-active: $clr-neutral-100;
+$input-placeholder-dark-color-disabled: #a6b0b7;
+
+//border-color
+$input-border-dark-color-normal: #a6b0b7;
+$input-border-dark-color-hover: #0782e6;
+$input-border-dark-color-active: $clr-accent-400;
+$input-border-dark-color-disabled: #384045;
+$input-border-dark-color-error: $clr-danger-400;
+$input-border-dark-color-error-active: #c14746;
+$input-border-dark-color-password: #a6b0b7;
+
+//background
+$input-bg-color-dark: #152127;
+$input-bg-color-dark-disabled: #384045;
+
+//font
+$input-font-color-dark-disabled: #a6b0b7;

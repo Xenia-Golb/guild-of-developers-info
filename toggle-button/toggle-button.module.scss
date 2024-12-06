@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "@db/styles/abstracts" as *;
+
+.toggle-button {
+  font-family: $toggle-button-font-family;
+  background-color: $toggle-button-bg;
+  color: $toggle-button-font-color-normal;
+  font-size: $toggle-button-font-size;
+  width: $toggle-button-width;
+  height: $toggle-button-height;
+  font-weight: $toggle-button-font-weight;
+  border: none;
+  border-bottom: 1px solid $toggle-button-border-bottom-color;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  &:focus {
+    outline: none;
+  }
+  &__active {
+    background-color: $toggle-button-bg-active;
+    color: $toggle-button-font-color-active;
+    border-color: $toggle-button-bg-active;
+    border-radius: $toggle-button-border-radius;
+  }
+}
+
+.toggle-button-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  &__text {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: $toggle-button-font-size;
+    font-family: $toggle-button-font-family;
+    font-weight: $toggle-button-font-weight;
+    color: $toggle-button-font-color-active;
+    width: 130px;
+    align-items: flex-end;
+  }
+  .text-bold {
+    font-weight: 700;
+  }
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 7px;
+  &__text {
+    font-size: $toggle-button-font-size;
+    font-family: $toggle-button-font-family;
+    font-weight: $toggle-button-font-weight;
+    color: $toggle-button-font-color-active;
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,177 @@
+@use 'sass:map';
+@use '@db/styles/abstracts' as *;
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+
+  &--light {
+    .input {
+      border: $input-border-size solid $input-border-color-normal;
+      background-color: $input-bg-color-light;
+
+      &-label {
+        color: $input-label-color;
+      }
+
+      &::placeholder {
+        color: $input-placeholder-color-normal;
+      }
+
+      &:hover {
+        border-color: $input-border-color-hover;
+      }
+
+      &:is(:focus, :active) {
+        border-color: $input-border-color-active;
+
+        &::placeholder {
+          color: $input-placeholder-color-active;
+        }
+      }
+
+      &:disabled {
+        border-color: $input-border-color-disabled;
+        background-color: $input-bg-color-disabled;
+        color: $input-placeholder-color-disabled;
+      }
+
+      &-error {
+        border-color: $input-border-color-error;
+        color: $input-placeholder-color-error;
+
+        &:is(:focus, :active, :hover) {
+          border-color: $input-border-color-error;
+          outline: none;
+
+          &::placeholder {
+            color: $input-placeholder-color-active;
+          }
+        }
+      }
+      @each $name, $icon-map in $icons {
+        &_icon_#{$name}::before {
+          $icon-width: map.get($icon-map, 'width');
+          $icon-height: map.get($icon-map, 'height');
+          $icon-file-name: map.get($icon-map, 'file');
+
+          content: '';
+          display: block;
+          mask: no-repeat center / contain url(../../../icons/#{$icon-file-name}.svg);
+          width: $input-icon-size;
+          height: $input-icon-size;
+          background-color: $input-icon-color-light;
+        }
+      }
+    }
+  }
+
+  &--dark {
+    .input {
+      border: $input-border-size solid $input-border-dark-color-normal;
+      background-color: $input-bg-color-dark;
+
+      &-label {
+        color: $input-label-color-dark;
+      }
+      &::placeholder {
+        color: $input-placeholder-dark-color-default;
+      }
+      &:hover {
+        border-color: $input-border-dark-color-hover;
+      }
+      &:is(:focus, :active) {
+        border-color: $input-border-dark-color-active;
+
+        &::placeholder {
+          color: $input-placeholder-dark-color-default;
+        }
+      }
+      &:disabled {
+        border-color: $input-border-dark-color-disabled;
+        background-color: $input-bg-color-disabled;
+        &::placeholder {
+          color: $input-placeholder-dark-color-disabled;
+        }
+      }
+      &-error {
+        border-color: $input-border-dark-color-error;
+        color: $input-placeholder-dark-color-default;
+
+        &:is(:focus, :active, :hover) {
+          border-color: $input-border-dark-color-error-active;
+          outline: none;
+
+          &::placeholder {
+            color: $input-placeholder-dark-color-default;
+          }
+        }
+      }
+      @each $name, $icon-map in $icons {
+        &_icon_#{$name}::before {
+          $icon-width: map.get($icon-map, 'width');
+          $icon-height: map.get($icon-map, 'height');
+          $icon-file-name: map.get($icon-map, 'file');
+
+          content: '';
+          display: block;
+          mask: no-repeat center / contain url(../../../icons/#{$icon-file-name}.svg);
+          width: $input-icon-size;
+          height: $input-icon-size;
+          background-color: $input-icon-color-dark;
+        }
+      }
+    }
+  }
+}
+.input {
+  --max-width: 257px;
+  --min-height: 50px;
+
+  min-height: var(--min-height);
+  max-width: var(--max-width);
+
+  padding: 15px 0px 13px 16px;
+  border-radius: $input-border-radius;
+  font-size: $fs-150;
+  font-weight: $fw-400;
+  font-family: $input-font-family;
+  font-size: 18px;
+  transition: ease-out 200ms;
+
+  &-label {
+    font-size: 13px;
+    font-weight: $input-label-weight;
+    &-disabled {
+      color: $input-label-color-disabled;
+    }
+  }
+  &::placeholder {
+    line-height: 21.6px;
+  }
+  &:hover {
+    outline: none;
+
+    &::placeholder {
+      color: $input-placeholder-color-hover;
+      font-weight: 400;
+    }
+  }
+  &:is(:focus, :active) {
+    outline: none;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.icon {
+  position: absolute;
+  bottom: 17px;
+  right: 83%;
+  cursor: pointer;
+}
