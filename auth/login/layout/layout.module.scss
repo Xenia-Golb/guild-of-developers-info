@@ -1,0 +1,43 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 50vw;
+  background: linear-gradient(to bottom, #079ee6, #0782e6, #6123e1);
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.bottomImageWrapper {
+  height: 70vh;
+  width: 100%;
+  background-image: url('../../../img/login/Ellipse\ 170.png');
+  background-size: cover;
+  background-position: center;
+  margin-top: auto;
+  filter: blur(1.1px);
+  transition: filter 0.3s ease;
+  position: relative;
+}
+.bottomTextBlock {
+  display: flex;
+  width: 50vw;
+  padding: 35px;
+  color: #1c1f21;
+  font-size: 36px;
+  font-weight: 800;
+  position: absolute;
+  bottom: 20px;
+  .bottomText {
+    position: relative;
+    span {
+      color: #0782e6;
+    }
+    img {
+      position: absolute;
+      bottom: 5px;
+      right: 110px;
+    }
+  }
+}

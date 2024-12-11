@@ -1,0 +1,87 @@
+/* Базовые стили для текста */
+$text-color: #1c1f21;
+$font-size-small: 18px;
+$font-size-large: 28px;
+$line-height-small: 21.6px;
+$line-height-large: 36.4px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.container {
+  position: relative;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  justify-content: center;
+}
+.form-auth-final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.title {
+  color: $text-color;
+  font-size: $font-size-large;
+  font-weight: 600;
+  line-height: $line-height-large;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-base {
+  color: $text-color;
+  font-size: $font-size-small;
+  font-weight: 400;
+  line-height: $line-height-small;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -50px;
+  left: -10%;
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: $text-color;
+  font-size: 16px;
+}
+.icon {
+  margin-right: 8px;
+}
+.input-container {
+  max-width: 495px;
+  min-height: 50px;
+}
+
+.auth-button {
+  width: 100%;
+  height: 50px;
+  margin-top: 16px;
+}
+
+.qr-code-wrapper {
+  margin-top: 10px;
+}
+
+.info,
+.info-step {
+  @extend .text-base;
+}
