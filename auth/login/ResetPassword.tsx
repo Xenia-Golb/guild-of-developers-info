@@ -1,13 +1,37 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { useForm, Controller } from 'react-hook-form';
 
 import { ROUTES } from '../../app/pages-url.config';
 import { Button, IconsItem, Input } from '@db/ui';
+import s from './authentification/authentication.module.scss';
+import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 
-import s from './authentication.module.scss';
+type ResetPasswordFormData = {
+  email: string;
+};
 
 const ResetPassword = () => {
   const navigate = useNavigate();
   const path = useLocation();
+  const [showEmailError, setShowEmailError] = useState(false);
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ResetPasswordFormData>();
+
+  useEffect(() => {
+    setShowEmailError(!!errors.email);
+  }, [errors]);
+
+  const onSubmit = (data: ResetPasswordFormData) => {
+    console.log(data);
+    navigate(`${ROUTES.LOGIN}/${ROUTES.RESET_PASSWORD_SUCCESS}`, {
+      state: { email: data.email },
+    });
+  };
 
   return (
     <div className={s['container']}>
@@ -22,23 +46,42 @@ const ResetPassword = () => {
             Назад
           </button>
           <div className={s['form']}>
-            <h2 className={s['title']}>Восстановление пароля</h2>
-            <div className={s['info']}>
+            <h2 className={clsx(s['title'], 'H1')}>Восстановление пароля</h2>
+            <div className={clsx(s['info'], 'BodyRegular')}>
               Укажите адрес электронной почты, на который нужно отправить ссылку для сброса пароля
             </div>
-            <Input
-              className={s['input-container']}
-              label='Адрес электронной почты'
-              placeholder='Введите адрес электронной почты'
-            />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className={s['input-wrapper']}>
+                <Controller
+                  name='email'
+                  control={control}
+                  defaultValue=''
+                  rules={{
+                    required: 'Это поле обязательно',
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'Некорректный формат email',
+                    },
+                  }}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      className={clsx(s['input-container'], 'BodyRegular')}
+                      label='Адрес электронной почты'
+                      placeholder='Введите адрес электронной почты'
+                      error={showEmailError}
+                    />
+                  )}
+                />
+                {showEmailError && (
+                  <div className={s['error-message']}>
+                    {errors.email?.message || 'Ошибка при вводе email'}
+                  </div>
+                )}
+              </div>
 
-            <Button
-              disabled
-              onClick={() => {
-                navigate(`${ROUTES.LOGIN}/${ROUTES.RESET_PASSWORD_SUCCESS}`);
-              }}>
-              Восстановить
-            </Button>
+              <Button className={clsx(s['auth-button'], 'Button')}>Восстановить</Button>
+            </form>
           </div>
         </>
       ) : (

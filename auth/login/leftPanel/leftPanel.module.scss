@@ -8,11 +8,14 @@
   justify-content: flex-start;
   overflow: hidden;
 }
+.logo {
+  padding: 80px 0 0 96px;
+}
 
 .bottomImageWrapper {
   height: 70vh;
   width: 100%;
-  background-image: url('../../../img/login/Ellipse\ 170.png');
+  background-image: url('../../../img/login/Ellipse170.png');
   background-size: cover;
   background-position: center;
   margin-top: auto;
@@ -20,6 +23,7 @@
   transition: filter 0.3s ease;
   position: relative;
 }
+
 .bottomTextBlock {
   display: flex;
   width: 50vw;
@@ -29,15 +33,20 @@
   font-weight: 800;
   position: absolute;
   bottom: 20px;
-  .bottomText {
-    position: relative;
+  &__flex {
+    display: flex;
+    gap: 20px;
     span {
       color: #0782e6;
     }
     img {
-      position: absolute;
-      bottom: 5px;
-      right: 110px;
+      width: 60px;
+      height: 60px;
     }
+  }
+
+  .bottomText {
+    display: flex;
+    flex-direction: column;
   }
 }

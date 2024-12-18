@@ -15,18 +15,22 @@ body {
   margin: 0;
 }
 .container {
-  position: relative;
-}
-.form {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 80px;
+}
+.form {
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   align-items: stretch;
   justify-content: center;
 }
 .form-auth-final {
   display: flex;
+  width: 82%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -49,18 +53,17 @@ body {
   font-weight: 400;
   line-height: $line-height-small;
 }
-
+.back-button-block {
+  margin-left: -80px;
+}
 .back-button {
   display: flex;
   align-items: center;
-  position: absolute;
-  top: -50px;
-  left: -10%;
   background: none;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: $text-color;
+  color: #677582;
   font-size: 16px;
 }
 .icon {

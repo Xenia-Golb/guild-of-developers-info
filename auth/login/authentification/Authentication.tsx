@@ -1,10 +1,11 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { ROUTES } from '../../app/pages-url.config';
+import { ROUTES } from '../../../app/pages-url.config';
 import { Button } from '@db/ui';
-import { userId } from '../../entities/roles/model/mockRole';
-import { permissions } from '../../entities/roles/model/roles.types';
-import { userPermissions } from '../../entities/roles/model/permissionsDashboard';
+import { userId } from '../../../entities/roles/model/mockRole';
+import { permissions } from '../../../entities/roles/model/roles.types';
+import { userPermissions } from '../../../entities/roles/model/permissionsDashboard';
 import s from './authentication.module.scss';
+import clsx from 'clsx';
 
 const Authentication = () => {
   const navigate = useNavigate();
@@ -15,14 +16,14 @@ const Authentication = () => {
       {path.pathname === `${ROUTES.LOGIN}/${ROUTES.AUTHENTICATION}` ? (
         <>
           <div className={s['form']}>
-            <h2 className={s['title']}>Подключите двухфакторную аутентификацию</h2>
-            <div className={s['info']}>
+            <h2 className={clsx(s['title'], 'H1')}>Подключите двухфакторную аутентификацию</h2>
+            <div className={clsx(s['info'], 'BodyRegular')}>
               Настройте дополнительный уровень защиты, чтобы хакеры не могли получить доступ к
               вашему аккаунту
             </div>
 
             <Button
-              className={s['auth-button']}
+              className={clsx(['auth-button'], 'Button')}
               onClick={() => {
                 navigate(`${ROUTES.AUTHENTICATION}/${ROUTES.STEP_1}`);
               }}>
@@ -31,7 +32,7 @@ const Authentication = () => {
 
             <Button
               type='outline'
-              className={s['auth-button']}
+              className={clsx(['auth-button'], 'Button')}
               onClick={() => {
                 navigate(
                   permissions !== userPermissions

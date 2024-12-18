@@ -1,3 +1,9 @@
+$text-color: #1c1f21;
+$font-size-small: 18px;
+$font-size-large: 28px;
+$line-height-small: 21.6px;
+$line-height-large: 36.4px;
+
 *,
 *::before,
 *::after {
@@ -7,6 +13,7 @@
 body {
   margin: 0;
 }
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -25,33 +32,49 @@ body {
 
 .form {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   flex-direction: column;
   width: 80%;
+  gap: 15px;
 }
+
 .title {
-  color: #1c1f21;
-  font-size: 28px;
+  color: $text-color;
+  font-size: $font-size-large;
   font-weight: 600;
-  line-height: 36.4px;
+  line-height: $line-height-large;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
 }
+
 .form-inputs {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .form-input {
   min-width: 350px;
 }
+
 .inputs-bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 50px;
 }
+
 .auth-button {
-  width: 100%;
+  min-width: 350px;
   height: 50px;
   margin-top: 16px;
+}
+.forget-button {
+  color: #079ee6;
+}
+
+.checkbox {
+  gap: 10px;
 }
