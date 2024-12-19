@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
 import { ROUTES } from '../../app/pages-url.config';
-import { Button, Checkbox, Input, PasswordInput } from '@db/ui';
+import { Button, Checkbox, Input, PasswordInput, Tooltip } from '@db/ui';
 
 import s from './register.module.scss';
 import clsx from 'clsx';
@@ -82,7 +82,16 @@ const Register = () => {
                     )}
                   />
                   {showEmailError && (
-                    <div className={s['error-message']}>{errors.email?.message}</div>
+                    <div className={s['error-message']}>
+                      <Tooltip
+                        isPassword={false}
+                        side='left'
+                        isVisible={true}
+                        charCount={0}
+                        error={true}
+                        errorText={errors.email?.message}
+                      />
+                    </div>
                   )}
                 </div>
                 <div className={s['input-wrapper']}>
@@ -113,7 +122,16 @@ const Register = () => {
                     )}
                   />
                   {showPasswordError && (
-                    <div className={s['error-message']}>{errors.password?.message}</div>
+                    <div className={s['error-message']}>
+                      <Tooltip
+                        isPassword={false}
+                        side='left'
+                        isVisible={true}
+                        charCount={0}
+                        error={true}
+                        errorText={errors.password?.message}
+                      />
+                    </div>
                   )}
                 </div>
               </div>

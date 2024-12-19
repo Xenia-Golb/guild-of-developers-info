@@ -2,8 +2,8 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 
 import { ROUTES } from '../../app/pages-url.config';
-import { Button, IconsItem, Input } from '@db/ui';
-import s from './authentification/authentication.module.scss';
+import { Button, IconsItem, Input, Tooltip } from '@db/ui';
+import s from './authentication/authentication.module.scss';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
@@ -75,7 +75,14 @@ const ResetPassword = () => {
                 />
                 {showEmailError && (
                   <div className={s['error-message']}>
-                    {errors.email?.message || 'Ошибка при вводе email'}
+                    <Tooltip
+                      isPassword={false}
+                      side='left'
+                      isVisible={true}
+                      charCount={0}
+                      error={true}
+                      errorText={errors.email?.message}
+                    />
                   </div>
                 )}
               </div>

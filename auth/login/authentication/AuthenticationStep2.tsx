@@ -12,11 +12,10 @@ const AuthenticationStep2 = () => {
   const [code, setCode] = useState('');
   const [qrValue, setQrValue] = useState('');
 
-  // Функция для генерации случайного 6-значного кода
   const generateCode = () => {
-    const randomCode = Math.floor(100000 + Math.random() * 900000); // Генерация 6-значного числа
+    const randomCode = Math.floor(100000 + Math.random() * 900000);
     setCode(randomCode.toString());
-    setQrValue(`otpauth://totp/YourAppName?secret=${randomCode}&issuer=YourAppName`); // Формирование строки для QR-кода
+    setQrValue(`otpauth://totp/YourAppName?secret=${randomCode}&issuer=YourAppName`);
   };
 
   useEffect(() => {

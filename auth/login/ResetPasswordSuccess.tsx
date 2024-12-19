@@ -1,4 +1,4 @@
-import s from './authentification/authentication.module.scss';
+import s from './authentication/authentication.module.scss';
 import post from '../../img/login/post.svg';
 import clsx from 'clsx';
 import { useLocation } from 'react-router-dom';

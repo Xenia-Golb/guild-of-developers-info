@@ -1,5 +1,5 @@
-/* Базовые стили для текста */
-$text-color: #1c1f21;
+$text-color: var(--clr-login-color);
+$back-btn-color: var(--clr-login-back-btn-color);
 $font-size-small: 18px;
 $font-size-large: 28px;
 $line-height-small: 21.6px;
@@ -63,7 +63,7 @@ body {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: #677582;
+  color: $back-btn-color;
   font-size: 16px;
 }
 .icon {

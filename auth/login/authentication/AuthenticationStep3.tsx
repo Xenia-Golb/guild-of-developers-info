@@ -1,4 +1,4 @@
-import { Button, IconsItem, Input } from '@db/ui';
+import { Button, IconsItem, Input, Tooltip } from '@db/ui';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../app/pages-url.config';
 import s from './authentication.module.scss';
@@ -68,7 +68,18 @@ const AuthenticationStep3 = () => {
                 />
               )}
             />
-            {showCodeError && <div className={s['error-message']}>{errors.code?.message}</div>}
+            {showCodeError && (
+              <div className={s['error-message']}>
+                <Tooltip
+                  isPassword={false}
+                  side='left'
+                  isVisible={true}
+                  charCount={0}
+                  error={true}
+                  errorText={errors.code?.message}
+                />
+              </div>
+            )}
           </div>
 
           <Button className={clsx(['auth-button'], 'Button')}>Подключить</Button>
